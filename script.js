@@ -70,8 +70,8 @@ const fullDeck = [
 
 
 
-//updateDisplay() changes the .innertext values of image0 through image4 in the html document to display the cards in the "hand" array. It also puts the text "(more)" above the left/right buttons when there are more cards to display to the left or right. If the user is customizing the deck, then the "fullDeck" array is displayed instead of the hand.
-//as the name "Image" suggests, I plan to update this code to display images of each card instead of text. 
+//updateDisplay() changes the src values of image0 through image4 in the html document to display the cards in the "hand" array. It also puts the text "(more)" above the left/right buttons when there are more cards to display to the left or right. If the user is customizing the deck, then the "fullDeck" array is displayed instead of the hand.
+
 function updateDisplay(){
 if (customizing) {
   (fullDeck.length > (0+displayPosition)) ? document.getElementById('image0').src = fullDeck[0+displayPosition].picture : document.getElementById('image0').src = emptySpot;
