@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Web Page</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Card Shuffler</h1>
+  <hr>
+
+  <!--Explains the program to the user and allow them to show/hide these instructions.-->
+  <h2 onclick='showHideInst();'>| Instructions |</h2> 
+  <section id='theInstructions'>
+    <p>Click "Draw" to draw the top card of the deck.</p>
+    <p>When you have more than 5 cards, click on left or right to view additional cards.</p>
+    <p>Select cards in your hand using toggle switches.</p>
+    <p>Click "Discard" to discard all selected cards.</p>
+    <p>Click "Shuffle" to shuffle the discard pile back into the deck.</p>
+    <p>Click "Deck" to show the cards in the deck.</p>
+    <p>Click "Pile" show the cards in the discard pile.</p>
+    <p>Click "customize" to change the contents of the deck.</p>
+    <p>Click "instructions" to show or hide this list</p>
+    <p>Card images were borrowed from: https://en.wikipedia.org/wiki/Standard_52-card_deck </p>
+    <p>Empty image for spots without cards was borrowed from https://commons.wikimedia.org/wiki/File:Empty.png#filelinks</p>
+    
+  </section>
+  <hr>
+
+  <!--A list of buttons for the user to click-->
+  <h2>
+    <span onclick='drawCard();'>| Draw |</span>
+    <span onclick='discard();'>| Discard |</span>
+    <span onclick='shuffle();'>| Shuffle |</span>
+    <span onclick='viewDeck();'>| Deck |</span>
+    <span onclick='viewPile();'>| Pile |</span>
+    <span onclick='customizeDeck();'>| Customize |</span>
+  </h2>
+  <hr>
+
+  <!--Display the cards in the user's hand. This should have a toggle to select any number of cards-->
+  <h2>Hand (<span id='handTotal'>0</span>)</h2>
+  
+  <form action="submission.html" method="POST">
+    <table>
+      <tbody>
+        <tr>
+          <th id='moreLeft'></th>
+          <th></th>
+          <th ><img id='image0' src ='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734'/></th>
+          <th ><img id='image1' src ='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734'/></th>
+          <th ><img id='image2' src ='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734'/></th>
+          <th ><img id='image3' src ='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734'/></th>
+          <th ><img id='image4' src ='https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734'/></th>
+          <th></th>
+          <th id='moreRight'></th>
+        </tr>
+        <tr>
+          <td onclick='leftHand();'>| Left |</td>
+          <td>~ ~</td>
+          <td>
+            <input type="checkbox" name="selectCards" id="spot0" value="spot1">
+            <label for="spot0"></label>
+          </td>
+          <td>
+            <input type="checkbox" name="selectCards" id="spot1" value="spot1">
+            <label for="spot1"></label>
+          </td>
+          <td>
+            <input type="checkbox" name="selectCards" id="spot2" value="spot2">
+            <label for="spot2"></label>
+          </td>
+          <td>
+            <input type="checkbox" name="selectCards" id="spot3" value="spot3">
+            <label for="spot3"></label>
+          </td>
+          <td>
+            <input type="checkbox" name="selectCards" id="spot4" value="spot4">
+            <label for="spot4"></label>
+          </td>
+          <td>~ ~</td>
+          <td onclick='rightHand();'>| Right |</td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  <br>
+  <p id='message'></p>
+  <script src="script.js"></script>
+</body>
+</html>
